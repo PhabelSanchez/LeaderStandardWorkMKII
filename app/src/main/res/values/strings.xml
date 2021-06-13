@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LeaderStandardWork</string>
+    <string name="title_home">Home</string>
+    <string name="title_planning">Planning</string>
+    <string name="title_report">Report</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="title_dashboard">Dashboard</string>
+</resources>
