@@ -5,4 +5,9 @@
     <string name="title_report">Report</string>
     <string name="title_schedule">Schedule</string>
     <string name="title_dashboard">Dashboard</string>
+    <string name="Planning">Planning</string>
+    <string name="Schedule" />
+    <string name="Schedule1">Schedule</string>
+    <string name="Report">Report</string>
+    <string name="AppLogo">AppLogo</string>
 </resources>
