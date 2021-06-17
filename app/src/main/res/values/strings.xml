@@ -10,4 +10,7 @@
     <string name="Schedule1">Schedule</string>
     <string name="Report">Report</string>
     <string name="AppLogo">AppLogo</string>
+    <string name="Daily">Daily</string>
+    <string name="Weekly">Weekly</string>
+    <string name="Monthly">Monthly</string>
 </resources>
