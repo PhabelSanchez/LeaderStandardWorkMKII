@@ -22,26 +22,19 @@ public class PlanningFragment extends Fragment {
     private PlanningViewModel planningViewModel;
     private FragmentPlanningBinding binding;
 
-    EditText task_name_field;
-    EditText category_field;
-    EditText description_field;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         planningViewModel =
                 new ViewModelProvider(this).get(PlanningViewModel.class);
 
-        binding = FragmentPlanningBinding.inflate(R.layout.fragment_planning, container, false);
+        binding = FragmentPlanningBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
-        
-
-        final TextView textView = binding.textPlanning;
+        final EditText editText = binding.taskNameField;
         planningViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+                editText.getText();
             }
         });
         return root;
