@@ -14,5 +14,5 @@ public class ScheduleViewModel extends ViewModel {
         mText.setValue("This is Schedule fragment");
     }
 
-    public LiveData<String> getText() { return mText}
+    public LiveData<String> getText() { return mText;}
 }
