@@ -2,7 +2,15 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/Daily" />
-    <item android:title="@string/Weekly" />
-    <item android:title="@string/Monthly" />
+    <item
+        android:id="@+id/navigation_daily"
+        android:title="@string/Daily" />
+
+    <item
+        android:id="@+id/navigation_weekly"
+        android:title="@string/Weekly" />
+
+    <item
+        android:id="@+id/navigation_monthly"
+        android:title="@string/Monthly" />
 </menu>

@@ -9,7 +9,17 @@
         android:id="@+id/navigation_home"
         android:name="com.example.leaderstandardworkmkii.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_planning"
+            app:destination="@id/navigation_planning" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_schedule"
+            app:destination="@id/navigation_schedule" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_report"
+            app:destination="@id/navigation_report" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_planning"
@@ -26,5 +36,30 @@
         android:id="@+id/navigation_schedule"
         android:name="com.example.leaderstandardworkmkii.ui.schedule.ScheduleFragment"
         android:label="@string/title_schedule"
-        tools:layout="@layout/fragment_schedule" />
+        tools:layout="@layout/fragment_schedule" >
+        <action
+            android:id="@+id/action_navigation_schedule_to_dailyFragment"
+            app:destination="@id/dailyFragment" />
+        <action
+            android:id="@+id/action_navigation_schedule_to_weeklyFragment"
+            app:destination="@id/weeklyFragment" />
+        <action
+            android:id="@+id/action_navigation_schedule_to_monthlyFragment"
+            app:destination="@id/monthlyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dailyFragment"
+        android:name="com.example.leaderstandardworkmkii.ui.schedule.DailyFragment"
+        android:label="fragment_daily"
+        tools:layout="@layout/fragment_daily" />
+    <fragment
+        android:id="@+id/weeklyFragment"
+        android:name="com.example.leaderstandardworkmkii.ui.schedule.WeeklyFragment"
+        android:label="fragment_weekly"
+        tools:layout="@layout/fragment_weekly" />
+    <fragment
+        android:id="@+id/monthlyFragment"
+        android:name="com.example.leaderstandardworkmkii.ui.schedule.MonthlyFragment"
+        android:label="fragment_monthly"
+        tools:layout="@layout/fragment_monthly" />
 </navigation>
