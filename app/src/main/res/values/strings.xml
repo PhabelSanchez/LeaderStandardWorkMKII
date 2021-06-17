@@ -13,6 +13,12 @@
     <string name="Daily">Daily</string>
     <string name="Weekly">Weekly</string>
     <string name="Monthly">Monthly</string>
+    <string name="Welcome">Welcome!</string>
+    <string name="Description">The Leader Standard Work App is a tool that gives you
+        the ability to register all the required activities
+        that have to be completed on a daily, weekly, monthly basis.
+        In addition, the app offers you the capability to share reports
+        through be downloaded as a CSV or excel file.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
