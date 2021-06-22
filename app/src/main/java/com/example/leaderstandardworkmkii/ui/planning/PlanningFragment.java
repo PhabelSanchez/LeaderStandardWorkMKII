@@ -16,6 +16,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.leaderstandardworkmkii.R;
 import com.example.leaderstandardworkmkii.databinding.FragmentPlanningBinding;
 
+import org.jetbrains.annotations.NotNull;
+
+
 
 public class PlanningFragment extends Fragment {
 
@@ -38,6 +41,22 @@ public class PlanningFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        binding.captureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String taskName = binding.taskNameField.getText().toString();
+                String taskDescription = binding.descriptionField.getText().toString();
+                String taskCategory = binding.categoryField.getText().toString();
+                String concat = taskName + taskDescription + taskCategory;
+                binding.testingText.setText(concat);
+            }
+        });
+
     }
 
     @Override

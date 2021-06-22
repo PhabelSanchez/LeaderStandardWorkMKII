@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.report.ReportFragment">
 
+    <data>
+        <variable name="fragment" type="com.example.leaderstandardworkmkii.ui.report.ReportFragment" />
+    </data>
+
     <TextView
         android:id="@+id/text_notifications"
         android:layout_width="match_parent"
@@ -19,4 +23,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/a_test_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="A test Button"
+        android:onClick="@{(v)-> fragment.onSearchClick(v)}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/userText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="text something"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/text_notifications"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/a_test_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
