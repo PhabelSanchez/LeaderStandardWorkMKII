@@ -2,7 +2,7 @@ package com.example.leaderstandardworkmkii;
 
 import android.os.Bundle;
 
-import com.example.leaderstandardworkmkii.ui.schedule.ScheduleFragment;
+import com.example.leaderstandardworkmkii.ui.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.leaderstandardworkmkii.databinding.ActivityMainBinding;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
 
-
     }
+
+    public static ArrayList<Task> taskArrayList;
 
 }

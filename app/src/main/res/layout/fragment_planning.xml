@@ -35,6 +35,14 @@
             android:hint="Enter Task Description "
             android:inputType="textPersonName" />
 
+        <EditText
+            android:id="@+id/repetition_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Task Repetition"
+            android:inputType="textPersonName" />
+
         <Button
             android:id="@+id/captureButton"
             android:layout_width="match_parent"

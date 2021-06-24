@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,9 +13,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.leaderstandardworkmkii.MainActivity;
 import com.example.leaderstandardworkmkii.R;
 import com.example.leaderstandardworkmkii.databinding.FragmentPlanningBinding;
-import com.example.leaderstandardworkmkii.ui.schedule.ScheduleFragment;
+import com.example.leaderstandardworkmkii.ui.Task;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -48,18 +48,23 @@ public class PlanningFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        binding.captureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String taskName = binding.taskNameField.getText().toString();
+                String taskDescription = binding.descriptionField.getText().toString();
+                String taskCategory = binding.categoryField.getText().toString();
+                String taskRepetition = binding.repetitionField.getText().toString();
+                String concat = taskName + taskDescription + taskCategory + taskRepetition;
+                binding.testingText.setText(concat);
+                Task task = new Task();
+                task.setTask_name(taskName);
+                task.setDescription(taskDescription);
+                task.setCategory(taskCategory);
+                task.setRepetition(taskRepetition);
+                MainActivity.taskArrayList.add(task);
 
-        binding.captureButton.setOnClickListener(v -> {
-            String taskName = binding.taskNameField.getText().toString();
-            String taskDescription = binding.descriptionField.getText().toString();
-            String taskCategory = binding.categoryField.getText().toString();
-            String concat = taskName + taskDescription + taskCategory;
-            binding.testingText.setText(concat);
-            Bundle bundle = new Bundle(); //Ema
-            bundle.putString("fromPlanning", concat); //Ema
-            ScheduleFragment fragment = new ScheduleFragment(); //Ema
-            fragment.setArguments(bundle); //Ema
-            getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, fragment).commit(); //Ema
+            }
         });
 
     }
