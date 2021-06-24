@@ -1,6 +1,7 @@
 package com.example.leaderstandardworkmkii.ui.schedule;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
@@ -34,25 +35,30 @@ import org.jetbrains.annotations.NotNull;
 public class ScheduleFragment extends Fragment {
 
     private ScheduleViewModel scheduleViewModel;
-    private FragmentScheduleBinding scheduleBinding;
+    private FragmentScheduleBinding binding;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         scheduleViewModel =
                 new ViewModelProvider(this).get(ScheduleViewModel.class);
 
-        scheduleBinding = FragmentScheduleBinding.inflate(inflater, container, false);
-        View root = scheduleBinding.getRoot();
+        binding = FragmentScheduleBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.schedule_container, new DailyFragment()).commit();
 
-        final ConstraintLayout constraintView = scheduleBinding.frameLayout;
+        final ConstraintLayout constraintLayout = binding.scheduleFragmentContainer;
         scheduleViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
-            public void onChanged(@Nullable String s) {
-                constraintView.getViewById(R.id.nav_schedule_view);
+            public void onChanged(@Nullable String s) {constraintLayout.getViewById(R.id.schedule_fragment_container);
             }
         });
         return inflater.inflate(R.layout.fragment_schedule, container, false);
@@ -94,7 +100,7 @@ public class ScheduleFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        scheduleBinding = null;
+        binding = null;
     }
 
 }
