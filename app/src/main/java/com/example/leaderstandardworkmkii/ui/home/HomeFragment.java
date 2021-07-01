@@ -1,10 +1,14 @@
 package com.example.leaderstandardworkmkii.ui.home;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +39,13 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        VideoView videoView = (VideoView) root.findViewById(R.id.video_View);
+        String videoPath =  "android.resource://" + getActivity().getPackageName() + "/" + R.raw.presentation;
+
+        Uri uri = Uri.parse(videoPath);
+        videoView.setVideoURI(uri);
+        videoView.start();
+
         return root;
     }
 
