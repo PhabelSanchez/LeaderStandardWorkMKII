@@ -26,13 +26,13 @@ public class WeeklyFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_weekly, container, false);
 
         textView = view.findViewById(R.id.weeklyFragment);
-        Bundle bundle = this.getArguments();
-        if(bundle == null) {
-            Log.d("WeeklyFragment","There is no task stated");
-        } else {
-            String data = bundle.getString("fromPlanning");
-            textView.setText(data);
-        }
+//        Bundle bundle = this.getArguments();
+//        if(bundle == null) {
+//            Log.d("WeeklyFragment","There is no task stated");
+//        } else {
+//            String data = bundle.getString("fromPlanning");
+//            textView.setText(data);
+//        }
 
         return view;
     }
