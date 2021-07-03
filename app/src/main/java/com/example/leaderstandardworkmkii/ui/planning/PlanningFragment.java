@@ -16,16 +16,19 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.leaderstandardworkmkii.R;
 import com.example.leaderstandardworkmkii.databinding.FragmentPlanningBinding;
+import com.example.leaderstandardworkmkii.ui.Task;
 import com.example.leaderstandardworkmkii.ui.schedule.ScheduleFragment;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 
 
 public class PlanningFragment extends Fragment {
 
     private PlanningViewModel planningViewModel;
     private FragmentPlanningBinding binding;
+    public static ArrayList<Object> testArrayList = new  ArrayList();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -53,8 +56,19 @@ public class PlanningFragment extends Fragment {
             String taskName = binding.taskNameField.getText().toString();
             String taskDescription = binding.descriptionField.getText().toString();
             String taskCategory = binding.categoryField.getText().toString();
-            String concat = taskName + taskDescription + taskCategory;
+            String taskRepetition = binding.repetitionField.getText().toString();
+            String concat = taskName + taskDescription + taskCategory + taskRepetition;
             binding.testingText.setText(concat);
+            Task task = new Task();
+            task.setTask_name(taskName);
+            task.setDescription(taskDescription);
+            task.setCategory(taskCategory);
+            task.setRepetition(taskRepetition);
+            testArrayList.add(task);
+
+
+
+
 //            Bundle bundle = new Bundle(); //Ema
 //            bundle.putString("fromPlanning", concat); //Ema
 //            ScheduleFragment fragment = new ScheduleFragment(); //Ema

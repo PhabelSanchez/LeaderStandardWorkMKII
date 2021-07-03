@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    public static ArrayList<Object> taskArrayList = new  ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static ArrayList<Task> taskArrayList;
+
+
 
 }
