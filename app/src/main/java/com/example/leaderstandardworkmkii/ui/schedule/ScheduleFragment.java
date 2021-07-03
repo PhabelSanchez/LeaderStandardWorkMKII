@@ -8,40 +8,48 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.leaderstandardworkmkii.R;
 import com.example.leaderstandardworkmkii.databinding.FragmentScheduleBinding;
+import com.example.leaderstandardworkmkii.ui.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ScheduleFragment extends Fragment {
+import java.util.ArrayList;
 
+public class ScheduleFragment extends Fragment {
     private ScheduleViewModel scheduleViewModel;
     private FragmentScheduleBinding binding;
     private BottomNavigationView schNavigation;
+    private RecyclerView recyclerView;
+
 
     public View onCreateView(LayoutInflater inflater,
-                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+                             ViewGroup container, Bundle savedInstanceState) {
         scheduleViewModel =
                 new ViewModelProvider(this).get(ScheduleViewModel.class);
 
         binding = FragmentScheduleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-////        final RecyclerView recyclerView = binding.recyclerView;
-////        scheduleViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-////            @Override
-////            public void onChanged(@Nullable String s) {
-////                recyclerView.getChildLayoutPosition(0);
-////            }
-//        });
+        ArrayList<Task> tasks = new ArrayList<>();
+
+        root = inflater.inflate(R.layout.fragment_schedule, container, false);
+        recyclerView = root.findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
+        recyclerView.setAdapter(new ScheduleAdapter(getContext(),tasks));
+
+        schNavigation = (BottomNavigationView) getActivity().findViewById(R.id.nav_schedule_view);
 
         return root;
     }
@@ -49,8 +57,8 @@ public class ScheduleFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        BottomNavigationView scheduleView = (BottomNavigationView) view.findViewById(R.id.nav_schedule_view);
-        scheduleView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        schNavigation = (BottomNavigationView) view.findViewById(R.id.nav_schedule_view);
+        schNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         binding = FragmentScheduleBinding.bind(view);
         NavHostFragment.findNavController(this).navigate(R.id.action_navigation_schedule_to_dailyFragment);
@@ -84,13 +92,10 @@ public class ScheduleFragment extends Fragment {
             }
         };
     }
-//
-
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
-
 }

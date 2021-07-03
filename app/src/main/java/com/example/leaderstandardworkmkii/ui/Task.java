@@ -1,6 +1,6 @@
 package com.example.leaderstandardworkmkii.ui;
 
-public class Task {
+public class    Task {
     private String task_name;
     private String category;
     private String description;
