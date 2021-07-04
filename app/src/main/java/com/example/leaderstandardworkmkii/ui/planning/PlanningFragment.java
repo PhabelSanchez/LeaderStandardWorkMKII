@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,13 +23,15 @@ import com.example.leaderstandardworkmkii.ui.schedule.ScheduleFragment;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import android.widget.ArrayAdapter;
 
 
 public class PlanningFragment extends Fragment {
 
     private PlanningViewModel planningViewModel;
     private FragmentPlanningBinding binding;
-    public static ArrayList<Object> testArrayList = new  ArrayList();
+    private ArrayList<Object> testArrayList = new  ArrayList();
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -37,6 +40,9 @@ public class PlanningFragment extends Fragment {
 
         binding = FragmentPlanningBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        //final ArrayAdapter arrayAdapter = new ArrayAdapter<String>(PlanningFragment.getContext(),
+                //android.R.layout.simple_list_item_1, testArrayList);
 
         final EditText editText = binding.taskNameField;
         planningViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -65,6 +71,7 @@ public class PlanningFragment extends Fragment {
             task.setCategory(taskCategory);
             task.setRepetition(taskRepetition);
             testArrayList.add(task);
+
 
 
 
