@@ -25,12 +25,19 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_conversion_absoluteWidth="281dp" />
 
-    <VideoView
-        android:id="@+id/video_View"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_conversion_absoluteHeight="645dp"
         tools:layout_editor_absoluteY="86dp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_conversion_absoluteWidth="411dp" />
+        tools:layout_conversion_absoluteWidth="411dp"
+        >
+
+    <VideoView
+        android:id="@+id/video_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+    </FrameLayout>
 </LinearLayout>

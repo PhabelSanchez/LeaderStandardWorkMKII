@@ -44,6 +44,9 @@ public class HomeFragment extends Fragment {
 
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
+        MediaController mediaController = new MediaController(getContext());
+        videoView.setMediaController(mediaController);
+        mediaController.setAnchorView(videoView);
         videoView.start();
 
         return root;

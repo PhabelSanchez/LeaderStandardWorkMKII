@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.leaderstandardworkmkii.MainActivity;
 import com.example.leaderstandardworkmkii.R;
 import com.example.leaderstandardworkmkii.ui.Task;
 
@@ -47,7 +48,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     }
 
     public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
+        this.tasks = (ArrayList<Task>) tasks;
         notifyDataSetChanged(); //temporary
     }
 
