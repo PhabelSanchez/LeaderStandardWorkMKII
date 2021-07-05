@@ -16,18 +16,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHolder> {
-    private List<Task> tasks = new ArrayList<>();
+    private ArrayList<Task> tasks = MainActivity.taskArrayList;
     private LayoutInflater myInflater;
     private View.OnClickListener myClickListener;
+    private int recyclerRow;
 
-    ScheduleAdapter(Context context, List<Task> data) {
+    ScheduleAdapter(Context context, ArrayList<Task> data, int recyclerRow) {
         this.myInflater = LayoutInflater.from(context);
         this.tasks = data;
+        this.recyclerRow = recyclerRow;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = myInflater.inflate(R.layout.fragment_daily, parent, false);
+        View view = myInflater.inflate(recyclerRow, parent, false);
         return new ViewHolder(view);
     }
 

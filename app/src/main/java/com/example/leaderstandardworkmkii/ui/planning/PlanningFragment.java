@@ -81,8 +81,7 @@ public class PlanningFragment extends Fragment {
 //            ScheduleFragment fragment = new ScheduleFragment(); //Ema
 //            fragment.setArguments(bundle); //Ema
 //            getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, fragment).commit(); //Ema
-        });
-
+    });
     }
 
     @Override

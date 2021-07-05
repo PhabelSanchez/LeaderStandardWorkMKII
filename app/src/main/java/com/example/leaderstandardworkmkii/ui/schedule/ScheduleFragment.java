@@ -41,13 +41,13 @@ public class ScheduleFragment extends Fragment {
         binding = FragmentScheduleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        ArrayList<Task> tasks = new ArrayList<>();
+        ArrayList<Task> tasks = MainActivity.taskArrayList;
 
         root = inflater.inflate(R.layout.fragment_schedule, container, false);
         recyclerView = root.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
-        recyclerView.setAdapter(new ScheduleAdapter(getContext(),tasks));
+        recyclerView.setAdapter(new ScheduleAdapter(getContext(),tasks, R.layout.fragment_daily));
 
         schNavigation = (BottomNavigationView) getActivity().findViewById(R.id.nav_schedule_view);
 
