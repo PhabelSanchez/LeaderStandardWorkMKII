@@ -32,6 +32,8 @@ public class ScheduleFragment extends Fragment {
     private FragmentScheduleBinding binding;
     private BottomNavigationView schNavigation;
     private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private ScheduleAdapter scheduleAdapter;
 
 
     public View onCreateView(LayoutInflater inflater,
@@ -62,7 +64,6 @@ public class ScheduleFragment extends Fragment {
         schNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         binding = FragmentScheduleBinding.bind(view);
-        NavHostFragment.findNavController(this).navigate(R.id.action_navigation_schedule_to_dailyFragment);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener;
@@ -77,16 +78,17 @@ public class ScheduleFragment extends Fragment {
                 this.item = item;
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                ArrayList<Task> tasks = MainActivity.taskArrayList;
 
                 switch (item.getItemId()) {
                     case R.id.navigation_daily:
-                        fragmentTransaction.replace(R.id.schedule_fragment_container, new DailyFragment()).commit();
+                        recyclerView.setAdapter(new ScheduleAdapter(getContext(),tasks, R.layout.fragment_daily));
                         return true;
                     case R.id.navigation_weekly:
-                        fragmentTransaction.replace(R.id.schedule_fragment_container, new WeeklyFragment()).commit();
+                        recyclerView.setAdapter(new ScheduleAdapter(getContext(),tasks, R.layout.fragment_weekly));
                         return true;
                     case R.id.navigation_monthly:
-                        fragmentTransaction.replace(R.id.schedule_fragment_container, new MonthlyFragment()).commit();
+                        recyclerView.setAdapter(new ScheduleAdapter(getContext(),tasks, R.layout.fragment_monthly));
                         return true;
                 }
                 return false;

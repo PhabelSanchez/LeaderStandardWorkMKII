@@ -67,17 +67,17 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
 
         @Override
         public void onClick(View v) {
-            if (myClickListener != null) myClickListener.onClick(v);
+            if (myClickListener != null) myClickListener.onClick(itemView);
         }
 
         Task getItem(int id) {
             return tasks.get(id);
         }
-//
+
 //        void setClickListener(ItemClickListener itemClickListener) {
 //            this.myClickListener = itemClickListener;
 //        }
-//
+
 //        public interface ItemClickListener {
 //            void onItemClick(View view, int position);
 //        }
