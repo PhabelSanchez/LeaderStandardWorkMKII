@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.leaderstandardworkmkii.MainActivity;
 import com.example.leaderstandardworkmkii.R;
 import com.example.leaderstandardworkmkii.databinding.FragmentPlanningBinding;
 import com.example.leaderstandardworkmkii.ui.Task;
@@ -71,10 +72,10 @@ public class PlanningFragment extends Fragment {
             task.setDescription(taskDescription);
             task.setCategory(taskCategory);
             task.setRepetition(taskRepetition);
-            testArrayList.add(task);
-            Object lacosa = testArrayList.get(0);
-            //String laCatego = lacosa.getTask_name();
-            //Toast.makeText(getContext(), laCatego, Toast.LENGTH_SHORT).show();
+            MainActivity.taskArrayList.add(task);
+            //Object lacosa = testArrayList.get(0);
+            //String latext = String.valueOf(lacosa.getTask_name());
+            //Toast.makeText(getContext(), latext, Toast.LENGTH_SHORT).show();
 
 
 
