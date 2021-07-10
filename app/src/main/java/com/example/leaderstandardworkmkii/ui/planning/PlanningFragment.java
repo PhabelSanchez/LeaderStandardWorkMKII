@@ -72,8 +72,9 @@ public class PlanningFragment extends Fragment {
             task.setCategory(taskCategory);
             task.setRepetition(taskRepetition);
             testArrayList.add(task);
-            String laCatego = task.getCategory();
-            Toast.makeText(getContext(), laCatego, Toast.LENGTH_SHORT).show();
+            Object lacosa = testArrayList.get(0);
+            //String laCatego = lacosa.getTask_name();
+            //Toast.makeText(getContext(), laCatego, Toast.LENGTH_SHORT).show();
 
 
 
