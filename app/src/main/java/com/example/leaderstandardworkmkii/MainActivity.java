@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     public static ArrayList<Task> taskArrayList = new  ArrayList();
-    //Task task1 = new Task();
-    //Task task2 = new Task();
-
-    //task1.setTask_name();
+//    Task task1 = new Task();
+//    Task task2 = new Task();
+//
+//    task1.setTask_name();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
