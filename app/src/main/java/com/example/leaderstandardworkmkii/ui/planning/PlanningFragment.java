@@ -71,6 +71,7 @@ public class PlanningFragment extends Fragment {
             task.setCategory(taskCategory);
             task.setRepetition(taskRepetition);
             testArrayList.add(task);
+            System.out.println(testArrayList);
 
 
 
