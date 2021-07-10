@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 
 public class PlanningFragment extends Fragment {
@@ -71,7 +72,9 @@ public class PlanningFragment extends Fragment {
             task.setCategory(taskCategory);
             task.setRepetition(taskRepetition);
             testArrayList.add(task);
-            System.out.println(testArrayList);
+            String laCatego = task.getCategory();
+            Toast.makeText(getContext(), laCatego, Toast.LENGTH_SHORT).show();
+
 
 
 
