@@ -26,14 +26,6 @@ public class DailyFragment extends Fragment {
                              Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.fragment_daily, container, false);
 
-//       textView = view.findViewById(R.id.dailyFragment);
-//       Bundle bundle = this.getArguments();
-//       if(bundle == null) {
-//           Log.d("DailyFragment","There is no task stated");
-//       } else {
-//           String data = bundle.getString("fromPlanning");
-//           textView.setText(data);
-//       }
         return view;
     }
 }

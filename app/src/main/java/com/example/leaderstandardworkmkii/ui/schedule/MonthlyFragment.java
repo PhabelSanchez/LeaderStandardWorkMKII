@@ -27,14 +27,6 @@ public class MonthlyFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_monthly, container, false);
 
-        textView = view.findViewById(R.id.monthlyFragment);
-//        Bundle bundle = this.getArguments();
-//        if(bundle == null) {
-//            Log.d("MonthlyyFragment","There is no task stated");
-//        } else {
-//            String data = bundle.getString("fromPlanning");
-//            textView.setText(data);
-//        }
         return view;
     }
 }
