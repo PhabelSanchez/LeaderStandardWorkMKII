@@ -10,7 +10,6 @@ public class PlanningViewModel extends ViewModel {
 
     public PlanningViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is planning fragment");
     }
 
     public LiveData<String> getText() {
