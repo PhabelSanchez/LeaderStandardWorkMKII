@@ -55,9 +55,5 @@
             android:layout_height="wrap_content"
             android:hint="A testing text" />
 
-        <ListView
-            android:id="@+id/testingList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

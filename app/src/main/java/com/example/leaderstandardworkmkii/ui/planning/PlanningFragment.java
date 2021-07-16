@@ -1,5 +1,7 @@
 package com.example.leaderstandardworkmkii.ui.planning;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavType;
 
 import com.example.leaderstandardworkmkii.MainActivity;
 import com.example.leaderstandardworkmkii.R;
@@ -70,6 +73,8 @@ public class PlanningFragment extends Fragment {
             task.setCategory(taskCategory);
             task.setRepetition(taskRepetition);
             MainActivity.taskArrayList.add(task);
+            SharedPreferences prefs = getContext().getSharedPreferences("TASKS_SAVED", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
             String text = String.valueOf(task.getTask_name());
             Toast.makeText(getContext(), text + " saved", Toast.LENGTH_SHORT).show();
 

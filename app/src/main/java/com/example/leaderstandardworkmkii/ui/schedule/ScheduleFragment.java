@@ -1,5 +1,7 @@
 package com.example.leaderstandardworkmkii.ui.schedule;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -45,6 +47,8 @@ public class ScheduleFragment extends Fragment {
         View root = binding.getRoot();
 
         ArrayList<Task> tasks = MainActivity.taskArrayList;
+
+        SharedPreferences prefs = getContext().getSharedPreferences("TASKS_SAVED", Context.MODE_PRIVATE);
 
         root = inflater.inflate(R.layout.fragment_schedule, container, false);
         recyclerView = root.findViewById(R.id.recycler_view);
