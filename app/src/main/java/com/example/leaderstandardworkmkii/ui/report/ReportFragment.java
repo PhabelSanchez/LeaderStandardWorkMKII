@@ -18,6 +18,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 
+import com.example.leaderstandardworkmkii.R;
 import com.example.leaderstandardworkmkii.databinding.FragmentReportBinding;
 
 import java.io.File;
@@ -37,6 +38,8 @@ public class ReportFragment extends Fragment {
         View root = binding.getRoot();
 
 
+
+
         final TextView textView = binding.textNotifications;
         reportViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -48,8 +51,15 @@ public class ReportFragment extends Fragment {
 
         return root;
     }
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ((Button) view.findViewById(R.id.button)).setOnClickListener(this::export);
+    }
+
     public void export(View view){
         //generate data
+
         StringBuilder data = new StringBuilder();
         data.append("Time,Distance");
         for(int i = 0; i<5; i++){
