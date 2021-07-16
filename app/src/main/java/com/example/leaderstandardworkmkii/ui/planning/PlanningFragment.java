@@ -43,9 +43,6 @@ public class PlanningFragment extends Fragment {
         binding = FragmentPlanningBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        //final ArrayAdapter arrayAdapter = new ArrayAdapter<String>(PlanningFragment.getContext(),
-                //android.R.layout.simple_list_item_1, testArrayList);
-
         final EditText editText = binding.taskNameField;
         planningViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -73,20 +70,9 @@ public class PlanningFragment extends Fragment {
             task.setCategory(taskCategory);
             task.setRepetition(taskRepetition);
             MainActivity.taskArrayList.add(task);
-            //Object lacosa = testArrayList.get(0);
-            //String latext = String.valueOf(lacosa.getTask_name());
-            //Toast.makeText(getContext(), latext, Toast.LENGTH_SHORT).show();
+            String text = String.valueOf(task.getTask_name());
+            Toast.makeText(getContext(), text + " saved", Toast.LENGTH_SHORT).show();
 
-
-
-
-
-
-//            Bundle bundle = new Bundle(); //Ema
-//            bundle.putString("fromPlanning", concat); //Ema
-//            ScheduleFragment fragment = new ScheduleFragment(); //Ema
-//            fragment.setArguments(bundle); //Ema
-//            getParentFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, fragment).commit(); //Ema
     });
     }
 

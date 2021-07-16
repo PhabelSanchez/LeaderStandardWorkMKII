@@ -1,6 +1,7 @@
 package com.example.leaderstandardworkmkii.ui.schedule;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     private ArrayList<Task> tasks = MainActivity.taskArrayList;
     private LayoutInflater myInflater;
     private View.OnClickListener myClickListener;
+    SharedPreferences savingPreferences;
     private int recyclerRow;
 
     ScheduleAdapter(Context context, ArrayList<Task> data, int recyclerRow) {
@@ -37,8 +39,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Task task = tasks.get(position);
-        holder.tvTitle.setText(task.getTask_name()); //I need the methods of necessary to have this information here
-        holder.tvDescription.setText(task.getDescription()); // I would need to call here for example a "currentTask.getTaskName()"
+        holder.tvTitle.setText(task.getTask_name());
+        holder.tvDescription.setText(task.getDescription());
         holder.tvCategory.setText(task.getCategory());
     }
 

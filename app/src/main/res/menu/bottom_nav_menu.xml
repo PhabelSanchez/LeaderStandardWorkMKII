@@ -21,9 +21,4 @@
         android:icon="@android:drawable/stat_sys_download"
         android:title="@string/title_report" />
 
-    <item
-        android:id="@+id/navigation_test"
-        android:icon="@android:drawable/stat_sys_download"
-        android:title="Test" />
-
 </menu>
