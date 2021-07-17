@@ -73,10 +73,22 @@ public class PlanningFragment extends Fragment {
             task.setCategory(taskCategory);
             task.setRepetition(taskRepetition);
             MainActivity.taskArrayList.add(task);
+
             SharedPreferences prefs = getContext().getSharedPreferences("TASKS_SAVED", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = prefs.edit();
-            String text = String.valueOf(task.getTask_name());
-            Toast.makeText(getContext(), text + " saved", Toast.LENGTH_SHORT).show();
+
+            String textName = String.valueOf(task.getTask_name());
+            String textDescription = String.valueOf(task.getDescription());
+            String textCategory = String.valueOf(task.getCategory());
+            String textRepetition = String.valueOf(task.getRepetition());
+
+            editor.putString("NAME", textName);
+            editor.putString("DESCRIPTIOM", textDescription);
+            editor.putString("CATEGORY", textCategory);
+            editor.putString("REPETITION", textRepetition);
+            editor.apply();
+
+            Toast.makeText(getContext(), textName + " saved", Toast.LENGTH_SHORT).show();
 
     });
     }

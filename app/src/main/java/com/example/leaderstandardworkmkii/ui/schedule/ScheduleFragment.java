@@ -50,6 +50,11 @@ public class ScheduleFragment extends Fragment {
 
         SharedPreferences prefs = getContext().getSharedPreferences("TASKS_SAVED", Context.MODE_PRIVATE);
 
+        prefs.getString("NAME","");
+        prefs.getString("DESCRIPTION","");
+        prefs.getString("CATEGORY","");
+        prefs.getString("REPETITION","");
+
         root = inflater.inflate(R.layout.fragment_schedule, container, false);
         recyclerView = root.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
